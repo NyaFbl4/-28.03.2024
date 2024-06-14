@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
@@ -7,16 +8,23 @@ namespace ShootEmUp
         public float HorizontalDirection { get; private set; }
 
         [SerializeField]
-        private GameObject character;
+        private GameObject _character;
 
-        [SerializeField]
-        private CharacterController characterController;
+        //[SerializeField]
+        private CharacterController _characterController;
+
+        [Inject]
+        public void Construct(CharacterController characterController)
+        {
+            this._characterController = characterController;
+            Debug.Log("injected CharacterController");
+        }
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                characterController._fireRequired = true;
+                _characterController._fireRequired = true;
             }
 
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -35,7 +43,7 @@ namespace ShootEmUp
         
         private void FixedUpdate()
         {
-            this.character.GetComponent<MoveComponent>().MoveByRigidbodyVelocity(new Vector2(this.HorizontalDirection, 0) * Time.fixedDeltaTime);
+            this._character.GetComponent<MoveComponent>().MoveByRigidbodyVelocity(new Vector2(this.HorizontalDirection, 0) * Time.fixedDeltaTime);
         }
     }
 }

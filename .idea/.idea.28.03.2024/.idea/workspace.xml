@@ -12,6 +12,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/IGameListener.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/VContainer/SceneLifeTimeScope.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameLIstenerInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Gameplay/Installers/SceneInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/SceneInstaller.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2hSHfwEKTpk0w0kEuXloOBBgOop" />
@@ -22,9 +26,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74bc69f0-2ab4-4437-8866-1d267de3a0f0" name="Default Changelist" comment="" />
+      <created>1718363550817</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718363550817</updated>
+      <workItem from="1718363577083" duration="2872000" />
+      <workItem from="1718366523381" duration="1901000" />
+    </task>
+    <servers />
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
