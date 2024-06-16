@@ -3,24 +3,25 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class InputManager : MonoBehaviour
+    public sealed class InputManager : ITickable, IFixedTickable
     {
         public float HorizontalDirection { get; private set; }
 
-        [SerializeField]
-        private GameObject _character;
+        //[SerializeField]
+        private readonly GameObject _character;
 
         //[SerializeField]
-        private CharacterController _characterController;
+        private readonly CharacterController _characterController;
 
-        [Inject]
-        public void Construct(CharacterController characterController)
+        //[Inject]
+        public  InputManager(CharacterController characterController, GameObject character)
         {
             this._characterController = characterController;
-            Debug.Log("injected CharacterController");
+            this._character = character;
+            Debug.Log("injected InputManager");
         }
 
-        private void Update()
+        public void Tick()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -41,7 +42,7 @@ namespace ShootEmUp
             }
         }
         
-        private void FixedUpdate()
+        public void FixedTick()
         {
             this._character.GetComponent<MoveComponent>().MoveByRigidbodyVelocity(new Vector2(this.HorizontalDirection, 0) * Time.fixedDeltaTime);
         }

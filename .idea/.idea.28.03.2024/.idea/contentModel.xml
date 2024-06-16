@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Никита\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Никита\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_28.03.2024.1553537893.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Никита\Desktop\Учеба\OTUS\28.03.2024" t="IncludeRecursive">
+    <e p="C:\Users\lomok\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\lomok\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_28.03.2024.2134777524.00" t="ExcludeRecursive" />
+    <e p="C:\Users\lomok\Desktop\Unity\Учеба\ДЗ\OTUS\28.03.2024" t="IncludeRecursive">
       <e p="28.03.2024.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -961,6 +961,7 @@
           </e>
           <e p="Character" t="Include">
             <e p="CharacterController.cs" t="Include" />
+            <e p="ICharacterController.cs" t="Include" />
           </e>
           <e p="Common" t="Include">
             <e p="PhysicsLayer.cs" t="Include" />
@@ -983,6 +984,7 @@
           <e p="GameManager" t="Include">
             <e p="GameManager.cs" t="Include" />
             <e p="IGameListener.cs" t="Include" />
+            <e p="IGameManager.cs" t="Include" />
           </e>
           <e p="Gameplay" t="Include">
             <e p="Installers" t="Include">
