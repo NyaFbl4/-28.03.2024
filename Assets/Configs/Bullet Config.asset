@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79421eddcf877e743832fa62d6b2eb16, type: 3}
   m_Name: Bullet Config
   m_EditorClassIdentifier: 
-  initialCount: 0
+  initialCount: 50
   container: {fileID: 0}
   worldTransform: {fileID: 0}
