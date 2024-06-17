@@ -1,22 +1,40 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class BulletSystem : MonoBehaviour
+    public sealed class BulletSystem : MonoBehaviour, IFixedTickable
     {
-        [SerializeField]
+        //[SerializeField]
         private int initialCount = 50;
         
-        [SerializeField] private Transform container;
-        [SerializeField] private Bullet prefab;
-        [SerializeField] private Transform worldTransform;
-        [SerializeField] private LevelBounds levelBounds;
+        //[SerializeField] 
+        private Transform container;
+        //[SerializeField] 
+        private Bullet prefab;
+        //[SerializeField] 
+        private Transform worldTransform;
+        //[SerializeField] 
+        private LevelBounds levelBounds;
 
         private readonly Queue<Bullet> m_bulletPool = new();
         private readonly HashSet<Bullet> m_activeBullets = new();
         private readonly List<Bullet> m_cache = new();
+
         
+        [Inject]
+        public void Construct(BulletsContainerConfig containerConfig, Bullet bulletPrefab,
+             LevelBounds levelBounds)
+        {
+            this.container = containerConfig.container;
+            this.prefab = bulletPrefab;
+            this.worldTransform = containerConfig.worldTransform;
+            this.levelBounds = levelBounds;
+            
+            Debug.Log("injected BulletSystem");
+        }
+
         private void Awake()
         {
             for (var i = 0; i < this.initialCount; i++)
@@ -26,7 +44,7 @@ namespace ShootEmUp
             }
         }
         
-        private void FixedUpdate()
+        public void FixedTick()
         {
             this.m_cache.Clear();
             this.m_cache.AddRange(this.m_activeBullets);

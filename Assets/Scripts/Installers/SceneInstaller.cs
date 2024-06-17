@@ -19,34 +19,42 @@ namespace ShootEmUp
         
         public override void InstallBindings()
         {
+            /*
             this.Container
                 .BindInterfacesAndSelfTo<InputManager>()
                 .AsSingle();
+                */
 
             this.Container
                 .Bind<GameObject>()
                 .FromInstance(this._character)
                 .AsSingle();
 
+            /*
             this.Container
                 .BindInterfacesAndSelfTo<CharacterController>()
                 //.FromInstance(this._characterController)
                 .AsSingle();
+                */
 
             this.Container
                 .Bind<GameManager>()
                 .FromComponentInHierarchy()
                 .AsSingle();
 
+            /*
             this.Container
                 .Bind<BulletSystem>()
                 .FromComponentInHierarchy()
                 .AsCached();
+                */
 
+            /*
             this.Container
                 .Bind<BulletConfig>()
                 .FromInstance(this._bulletConfig)
                 .AsSingle();
+                */
         }
     }
 }

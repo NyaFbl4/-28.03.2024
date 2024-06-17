@@ -7,20 +7,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/IGameListener.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/VContainer/SceneLifeTimeScope.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameLIstenerInstaller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Gameplay/Installers/SceneInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/ICharacterController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/SceneInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Binding/Binders/FromBinders/FromBinder.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/CharacterInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/SceneInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletsContainerConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemInstaller.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2hSHfwEKTpk0w0kEuXloOBBgOop" />

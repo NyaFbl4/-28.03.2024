@@ -18,12 +18,12 @@ namespace ShootEmUp
 
         //[Inject]
         public CharacterController(GameObject character, GameManager gameManager, 
-                              BulletSystem bulletSystem, BulletConfig bulletConfig)
+                              BulletSystem bulletSystem, BulletConfig bulletCharacterConfig)
         {
             _character = character;
             _gameManager = gameManager;
             _bulletSystem = bulletSystem;
-            _bulletConfig = bulletConfig;
+            _bulletConfig = bulletCharacterConfig;
             
             Debug.Log("injected CharacterController");
         }
