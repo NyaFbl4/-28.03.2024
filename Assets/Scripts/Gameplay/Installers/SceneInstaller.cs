@@ -30,7 +30,7 @@ namespace ShootEmUp
 
             this.Container
                 .BindInterfacesAndSelfTo<CharacterController>()
-                .FromInstance(this._characterController)
+                //.FromInstance(this._characterController)
                 .AsSingle();
 
             this.Container

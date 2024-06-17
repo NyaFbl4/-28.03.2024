@@ -297,7 +297,7 @@ namespace Zenject
             return FromNewComponentOnNewGameObject(new GameObjectCreationParameters());
         }
 
-        internal NameTransformScopeConcreteIdArgConditionCopyNonLazyBinder FromNewComponentOnNewGameObject(
+        public NameTransformScopeConcreteIdArgConditionCopyNonLazyBinder FromNewComponentOnNewGameObject(
             GameObjectCreationParameters gameObjectInfo)
         {
             BindingUtil.AssertIsComponent(ConcreteTypes);

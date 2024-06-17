@@ -3,59 +3,63 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class CharacterController : MonoBehaviour, IFixedTickable
+    public sealed class CharacterController : IFixedTickable
     {
-        [SerializeField] private GameObject _character; 
-        [SerializeField] private GameManager _gameManager;
-        [SerializeField] private BulletSystem _bulletSystem;
-        [SerializeField] private BulletConfig _bulletConfig;
+        //[SerializeField] 
+        private readonly GameObject _character; 
+        //[SerializeField] 
+        private readonly GameManager _gameManager;
+        //[SerializeField] 
+        private readonly BulletSystem _bulletSystem;
+        //[SerializeField] 
+        private readonly BulletConfig _bulletConfig;
         
         public bool _fireRequired;
 
-        [Inject]
-        public void Construct(GameObject character, GameManager gameManager, 
+        //[Inject]
+        public CharacterController(GameObject character, GameManager gameManager, 
                               BulletSystem bulletSystem, BulletConfig bulletConfig)
         {
-            this._character = character;
-            this._gameManager = gameManager;
-            this._bulletSystem = bulletSystem;
-            this._bulletConfig = bulletConfig;
+            _character = character;
+            _gameManager = gameManager;
+            _bulletSystem = bulletSystem;
+            _bulletConfig = bulletConfig;
             
             Debug.Log("injected CharacterController");
         }
 
         private void OnEnable()
         {
-            this._character.GetComponent<HitPointsComponent>().hpEmpty += this.OnCharacterDeath;
+            _character.GetComponent<HitPointsComponent>().hpEmpty += OnCharacterDeath;
         }
 
         private void OnDisable()
         {
-            this._character.GetComponent<HitPointsComponent>().hpEmpty -= this.OnCharacterDeath;
+            _character.GetComponent<HitPointsComponent>().hpEmpty -= OnCharacterDeath;
         }
 
-        public void OnCharacterDeath(GameObject _) => this._gameManager.FinishGame();
+        public void OnCharacterDeath(GameObject _) => _gameManager.FinishGame();
 
         public void FixedTick()
         {
-            if (this._fireRequired)
+            if (_fireRequired)
             {
-                this.OnFlyBullet();
-                this._fireRequired = false;
+                OnFlyBullet();
+                _fireRequired = false;
             }
         }
 
         private void OnFlyBullet()
         {
-            var weapon = this._character.GetComponent<WeaponComponent>();
+            var weapon = _character.GetComponent<WeaponComponent>();
             _bulletSystem.FlyBulletByArgs(new BulletSystem.Args
             {
                 isPlayer = true,
-                physicsLayer = (int) this._bulletConfig.physicsLayer,
-                color = this._bulletConfig.color,
-                damage = this._bulletConfig.damage,
+                physicsLayer = (int) _bulletConfig.physicsLayer,
+                color = _bulletConfig.color,
+                damage = _bulletConfig.damage,
                 position = weapon.Position,
-                velocity = weapon.Rotation * Vector3.up * this._bulletConfig.speed
+                velocity = weapon.Rotation * Vector3.up * _bulletConfig.speed
             });
         }
     }
