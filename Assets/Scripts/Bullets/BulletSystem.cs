@@ -26,7 +26,7 @@ namespace ShootEmUp
 
         
         //[Inject]
-        public BulletSystem(BulletsContainerConfig containerConfig, 
+        public BulletSystem(ContainerConfig containerConfig, 
             /*Bullet bulletPrefab,*/ LevelBounds levelBounds, BulletSpawner bulletSpawner)
         {
             this.container = containerConfig.container;

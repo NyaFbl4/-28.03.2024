@@ -6,7 +6,7 @@ namespace ShootEmUp
         fileName = "Bullet Config",
         menuName = "Bullets/New BulletsContainer"
     )]
-    public sealed class BulletsContainerConfig : ScriptableObject
+    public sealed class ContainerConfig : ScriptableObject
     {
         public int initialCount;
         public Transform container;

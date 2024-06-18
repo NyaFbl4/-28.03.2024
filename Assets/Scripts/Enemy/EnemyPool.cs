@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
@@ -23,6 +25,13 @@ namespace ShootEmUp
         private GameObject prefab;
 
         private readonly Queue<GameObject> enemyPool = new();
+
+        [Inject]
+        public void Construct(EnemyPositions enemyPositions, GameObject character, 
+            ContainerConfig enemyContainerConfig, GameObject prefab)
+        {
+            
+        }
         
         private void Awake()
         {
