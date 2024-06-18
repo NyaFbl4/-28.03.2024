@@ -956,6 +956,7 @@
           <e p="Bullets" t="Include">
             <e p="Bullet.cs" t="Include" />
             <e p="BulletConfig.cs" t="Include" />
+            <e p="BulletSpawner.cs" t="Include" />
             <e p="BulletSystem.cs" t="Include" />
             <e p="BulletUtils.cs" t="Include" />
           </e>

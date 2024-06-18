@@ -4,33 +4,37 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class BulletSystem : MonoBehaviour, IFixedTickable
+    public sealed class BulletSystem : IFixedTickable
     {
         //[SerializeField]
         private int initialCount = 50;
         
         //[SerializeField] 
-        private Transform container;
+        private readonly Transform container;
         //[SerializeField] 
-        private Bullet prefab;
+        private readonly Bullet prefab;
         //[SerializeField] 
-        private Transform worldTransform;
+        private readonly Transform worldTransform;
         //[SerializeField] 
-        private LevelBounds levelBounds;
+        private readonly LevelBounds levelBounds;
+        private readonly BulletSpawner _bulletSpawner;
+        //private readonly DiContainer _diContainer;
 
         private readonly Queue<Bullet> m_bulletPool = new();
         private readonly HashSet<Bullet> m_activeBullets = new();
         private readonly List<Bullet> m_cache = new();
 
         
-        [Inject]
-        public void Construct(BulletsContainerConfig containerConfig, Bullet bulletPrefab,
-             LevelBounds levelBounds)
+        //[Inject]
+        public  BulletSystem(BulletsContainerConfig containerConfig, Bullet bulletPrefab,
+             LevelBounds levelBounds, BulletSpawner bulletSpawner)
         {
             this.container = containerConfig.container;
             this.prefab = bulletPrefab;
             this.worldTransform = containerConfig.worldTransform;
             this.levelBounds = levelBounds;
+            this._bulletSpawner = bulletSpawner;
+            //_diContainer = diContainer;
             
             Debug.Log("injected BulletSystem");
         }
@@ -39,7 +43,10 @@ namespace ShootEmUp
         {
             for (var i = 0; i < this.initialCount; i++)
             {
-                var bullet = Instantiate(this.prefab, this.container);
+                //var bullet = Instantiate(this.prefab, this.container);
+                //var bullet = _diContainer.InstantiatePrefab(prefab, container);
+                var bullet = _bulletSpawner.SpawnBullet(prefab, container);
+                
                 this.m_bulletPool.Enqueue(bullet);
             }
         }
@@ -67,7 +74,8 @@ namespace ShootEmUp
             }
             else
             {
-                bullet = Instantiate(this.prefab, this.worldTransform);
+                //bullet = Instantiate(this.prefab, this.worldTransform);
+                bullet = _bulletSpawner.SpawnBullet(bullet, worldTransform);
             }
 
             bullet.SetPosition(args.position);
