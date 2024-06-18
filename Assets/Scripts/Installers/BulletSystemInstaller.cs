@@ -11,24 +11,27 @@ public class BulletSystemInstaller : MonoInstaller
     [SerializeField] private BulletConfig _bulletCharacterConfig;
 
     [SerializeField] private BulletSpawner _bulletSpawner;
-    [SerializeField] private Transform _container;
-    [SerializeField] private Transform _worldTransform;
+    //[SerializeField] private Transform _container;
+    //[SerializeField] private Transform _worldTransform;
     [SerializeField] private LevelBounds _levelBounds;
     [SerializeField] private BulletsContainerConfig _bulletsContainerConfig;
     
     public override void InstallBindings()
     {
+        /*
         var bullet = Container
             .InstantiatePrefabForComponent<Bullet>(_bulletPrefab);
-        
+            */
+
         this.Container
             .Bind<Bullet>()
-            .FromComponentInNewPrefab(this._bulletPrefab)
+            //.FromResource("Prefabs/Bullet")
+            .FromComponentsInNewPrefab(this._bulletPrefab)
             .AsCached();
-        
+
         this.Container
             .BindInterfacesAndSelfTo<BulletSystem>()
-            //.FromComponentInHierarchy()
+            .FromInstance(this._bulletSystem)
             .AsSingle();
 
         this.Container

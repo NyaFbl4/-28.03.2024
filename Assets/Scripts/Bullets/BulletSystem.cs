@@ -4,20 +4,20 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class BulletSystem : IFixedTickable
+    public sealed class BulletSystem : MonoBehaviour, IFixedTickable
     {
         //[SerializeField]
-        private int initialCount = 50;
+        private int initialCount;
         
         //[SerializeField] 
-        private readonly Transform container;
+        private  Transform container;
         //[SerializeField] 
-        private readonly Bullet prefab;
+        private  Bullet prefab;
         //[SerializeField] 
-        private readonly Transform worldTransform;
+        private  Transform worldTransform;
         //[SerializeField] 
-        private readonly LevelBounds levelBounds;
-        private readonly BulletSpawner _bulletSpawner;
+        private  LevelBounds levelBounds;
+        private  BulletSpawner _bulletSpawner;
         //private readonly DiContainer _diContainer;
 
         private readonly Queue<Bullet> m_bulletPool = new();
@@ -25,31 +25,42 @@ namespace ShootEmUp
         private readonly List<Bullet> m_cache = new();
 
         
-        //[Inject]
-        public  BulletSystem(BulletsContainerConfig containerConfig, Bullet bulletPrefab,
-             LevelBounds levelBounds, BulletSpawner bulletSpawner)
+        [Inject]
+        public void Construct(BulletsContainerConfig containerConfig, 
+            Bullet bulletPrefab, LevelBounds levelBounds, BulletSpawner bulletSpawner)
         {
             this.container = containerConfig.container;
             this.prefab = bulletPrefab;
             this.worldTransform = containerConfig.worldTransform;
             this.levelBounds = levelBounds;
             this._bulletSpawner = bulletSpawner;
-            //_diContainer = diContainer;
-            
-            Debug.Log("injected BulletSystem");
-        }
+            this.initialCount = containerConfig.initialCount;
 
-        private void Awake()
-        {
             for (var i = 0; i < this.initialCount; i++)
             {
                 //var bullet = Instantiate(this.prefab, this.container);
                 //var bullet = _diContainer.InstantiatePrefab(prefab, container);
-                var bullet = _bulletSpawner.SpawnBullet(prefab, container);
+                var bullet = _bulletSpawner.SpawnBullet(this.prefab, this.container);
+                
+                this.m_bulletPool.Enqueue(bullet);
+            }
+            
+            Debug.Log("injected BulletSystem");
+        }
+
+        /*
+        private void Awake()
+        {
+            for (var i = 0; i < this.initialCount; i++)
+            {
+                var bullet = Instantiate(this.prefab, this.container);
+                //var bullet = _diContainer.InstantiatePrefab(prefab, container);
+                //var bullet = _bulletSpawner.SpawnBullet(prefab, container);
                 
                 this.m_bulletPool.Enqueue(bullet);
             }
         }
+        */
         
         public void FixedTick()
         {
@@ -75,7 +86,7 @@ namespace ShootEmUp
             else
             {
                 //bullet = Instantiate(this.prefab, this.worldTransform);
-                bullet = _bulletSpawner.SpawnBullet(bullet, worldTransform);
+                bullet = _bulletSpawner.SpawnBullet(bullet, this.worldTransform);
             }
 
             bullet.SetPosition(args.position);

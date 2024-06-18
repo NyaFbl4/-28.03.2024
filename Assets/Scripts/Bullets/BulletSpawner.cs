@@ -6,13 +6,8 @@ namespace ShootEmUp
     {
         public Bullet SpawnBullet(Bullet prefab, Transform transform)
         {
-            Instantiate(prefab, transform);
-            return prefab;
-        }
-        
-        public GameObject CreateBullet()
-        {
-            return Instantiate(this.prefab, this.container);
+            var bullet = Instantiate(prefab, transform);
+            return bullet;
         }
     }
 }
