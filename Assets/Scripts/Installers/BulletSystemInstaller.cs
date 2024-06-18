@@ -5,7 +5,7 @@ using Zenject;
 public class BulletSystemInstaller : MonoInstaller
 {
     [SerializeField] private Bullet _bulletPrefab;
-    [SerializeField] private GameObject _gameObjectPrefab;
+    //[SerializeField] private GameObject _gameObjectPrefab;
     
     [SerializeField] private BulletSystem _bulletSystem;
     [SerializeField] private BulletConfig _bulletCharacterConfig;
@@ -23,12 +23,13 @@ public class BulletSystemInstaller : MonoInstaller
             .InstantiatePrefabForComponent<Bullet>(_bulletPrefab);
             */
 
+        
         this.Container
             .Bind<Bullet>()
-            //.FromResource("Prefabs/Bullet")
-            .FromComponentsInNewPrefab(this._bulletPrefab)
+            .FromInstance(this._bulletPrefab)
             .AsCached();
-
+            
+        
         this.Container
             .BindInterfacesAndSelfTo<BulletSystem>()
             //.FromInstance(this._bulletSystem)
@@ -50,10 +51,16 @@ public class BulletSystemInstaller : MonoInstaller
             .AsCached();
 
         this.Container
+            .BindFactory<Bullet, BulletSpawner>()
+            .FromComponentInNewPrefab(_bulletPrefab)
+            .WithGameObjectName("BULLET")
+            .UnderTransform(_bulletsContainerConfig.container);
+        /*
+        this.Container
             .Bind<BulletSpawner>()
             .FromInstance(this._bulletSpawner)
             .AsSingle();
-
+        */
         /*
         this.Container
             .BindInterfacesTo<BulletSystem>()

@@ -27,10 +27,10 @@ namespace ShootEmUp
         
         //[Inject]
         public BulletSystem(BulletsContainerConfig containerConfig, 
-            Bullet bulletPrefab, LevelBounds levelBounds, BulletSpawner bulletSpawner)
+            /*Bullet bulletPrefab,*/ LevelBounds levelBounds, BulletSpawner bulletSpawner)
         {
             this.container = containerConfig.container;
-            this.prefab = bulletPrefab;
+            //this.prefab = bulletPrefab;
             this.worldTransform = containerConfig.worldTransform;
             this.levelBounds = levelBounds;
             this._bulletSpawner = bulletSpawner;
@@ -40,7 +40,7 @@ namespace ShootEmUp
             {
                 //var bullet = Instantiate(this.prefab, this.container);
                 //var bullet = _diContainer.InstantiatePrefab(prefab, container);
-                var bullet = _bulletSpawner.SpawnBullet(this.prefab, this.container);
+                var bullet = _bulletSpawner.Create();
                 
                 this.m_bulletPool.Enqueue(bullet);
             }
@@ -86,7 +86,7 @@ namespace ShootEmUp
             else
             {
                 //bullet = Instantiate(this.prefab, this.worldTransform);
-                bullet = _bulletSpawner.SpawnBullet(bullet, this.worldTransform);
+                bullet = _bulletSpawner.Create();
             }
 
             bullet.SetPosition(args.position);

@@ -1011,11 +1011,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 201757604187811891, guid: 5fe72886874b4e445b06cf777ca4920d,
     type: 3}
-  _gameObjectPrefab: {fileID: 2743036428890533592, guid: 5fe72886874b4e445b06cf777ca4920d,
-    type: 3}
   _bulletCharacterConfig: {fileID: 11400000, guid: 7138ae5d32d814e0ca50c616c65ea105,
     type: 2}
-  _bulletSpawner: {fileID: 363245577}
   _levelBounds: {fileID: 2572952653776768186}
   _bulletsContainerConfig: {fileID: 11400000, guid: c9284737d5c58734090d0bc1296d5b27,
     type: 2}
