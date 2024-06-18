@@ -31,7 +31,7 @@ public class BulletSystemInstaller : MonoInstaller
 
         this.Container
             .BindInterfacesAndSelfTo<BulletSystem>()
-            .FromInstance(this._bulletSystem)
+            //.FromInstance(this._bulletSystem)
             .AsSingle();
 
         this.Container

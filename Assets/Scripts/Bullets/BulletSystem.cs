@@ -4,7 +4,7 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class BulletSystem : MonoBehaviour, IFixedTickable
+    public sealed class BulletSystem : IFixedTickable
     {
         //[SerializeField]
         private int initialCount;
@@ -25,8 +25,8 @@ namespace ShootEmUp
         private readonly List<Bullet> m_cache = new();
 
         
-        [Inject]
-        public void Construct(BulletsContainerConfig containerConfig, 
+        //[Inject]
+        public BulletSystem(BulletsContainerConfig containerConfig, 
             Bullet bulletPrefab, LevelBounds levelBounds, BulletSpawner bulletSpawner)
         {
             this.container = containerConfig.container;

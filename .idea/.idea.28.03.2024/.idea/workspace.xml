@@ -28,8 +28,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletsContainerConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSpawner.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemInstaller.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2hSHfwEKTpk0w0kEuXloOBBgOop" />
@@ -54,7 +54,7 @@
       <workItem from="1718363577083" duration="2872000" />
       <workItem from="1718366523381" duration="1901000" />
       <workItem from="1718606091939" duration="5980000" />
-      <workItem from="1718691091416" duration="7446000" />
+      <workItem from="1718691091416" duration="8561000" />
     </task>
     <servers />
   </component>
