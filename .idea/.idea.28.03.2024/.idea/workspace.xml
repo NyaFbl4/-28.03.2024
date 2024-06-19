@@ -17,13 +17,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameLIstenerInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Gameplay/Installers/SceneInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/ICharacterController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Binding/Binders/FromBinders/FromBinder.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/CharacterInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/SceneInstaller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSpawner.cs" />
@@ -35,6 +32,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/EnemySystemInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Configs/UnitConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/CharacterInstaller.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2hSHfwEKTpk0w0kEuXloOBBgOop" />
@@ -60,6 +62,8 @@
       <workItem from="1718366523381" duration="1901000" />
       <workItem from="1718606091939" duration="5980000" />
       <workItem from="1718691091416" duration="12903000" />
+      <workItem from="1718794792233" duration="1865000" />
+      <workItem from="1718796741922" duration="4907000" />
     </task>
     <servers />
   </component>

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79421eddcf877e743832fa62d6b2eb16, type: 3}
-  m_Name: Bullet Config
+  m_Script: {fileID: 11500000, guid: e12fd2c8655958b438d8383f29c493a4, type: 3}
+  m_Name: EnemyContainer
   m_EditorClassIdentifier: 
-  initialCount: 50
+  initialCount: 5
   container: {fileID: 0}
   worldTransform: {fileID: 0}

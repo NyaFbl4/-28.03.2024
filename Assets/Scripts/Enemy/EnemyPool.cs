@@ -26,12 +26,14 @@ namespace ShootEmUp
 
         private readonly Queue<GameObject> enemyPool = new();
 
+            /*
         [Inject]
         public void Construct(EnemyPositions enemyPositions, GameObject character, 
             ContainerConfig enemyContainerConfig, GameObject prefab)
         {
             
         }
+        */
         
         private void Awake()
         {

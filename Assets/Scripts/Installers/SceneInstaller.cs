@@ -5,17 +5,16 @@ namespace ShootEmUp
 {
     public class SceneInstaller : MonoInstaller
     {
-        [SerializeField] 
-        private CharacterController _characterController;
+        //[SerializeField] private CharacterController _characterController;
 
         [SerializeField] private GameManager _gameManager;
-        [SerializeField] private BulletSystem _bulletSystem;
-        [SerializeField] private BulletConfig _bulletConfig;
+        //[SerializeField] private BulletSystem _bulletSystem;
+        //[SerializeField] private BulletConfig _bulletConfig;
 
-        [SerializeField] private GameObject _character;
-        [SerializeField] private Bullet _bulletPrefab;
-        [SerializeField] private Transform _wolrdTransform;
-        [SerializeField] private LevelBounds _levelBounds;
+        //[SerializeField] private GameObject _character;
+        //[SerializeField] private Bullet _bulletPrefab;
+        //[SerializeField] private Transform _wolrdTransform;
+        //[SerializeField] private LevelBounds _levelBounds;
         
         public override void InstallBindings()
         {
@@ -25,11 +24,12 @@ namespace ShootEmUp
                 .AsSingle();
                 */
 
+            /*
             this.Container
                 .Bind<GameObject>()
                 .FromInstance(this._character)
                 .AsSingle();
-
+            */
             /*
             this.Container
                 .BindInterfacesAndSelfTo<CharacterController>()
