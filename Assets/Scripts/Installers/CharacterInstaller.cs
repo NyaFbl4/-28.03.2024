@@ -26,7 +26,7 @@ namespace ShootEmUp
             
             this.Container
                 .Bind<HitPointsComponent>()
-                .FromComponentInHierarchy(this._character)
+                .FromComponentInNewPrefab(this._character)
                 .AsSingle();
 
             this.Container
