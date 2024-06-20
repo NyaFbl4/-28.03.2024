@@ -26,15 +26,15 @@ namespace ShootEmUp
 
         
         //[Inject]
-        public BulletSystem(ContainerConfig containerConfig, 
+        public BulletSystem(Transform container, Transform worldTransform, int initialCount,
             /*Bullet bulletPrefab,*/ LevelBounds levelBounds, BulletSpawner bulletSpawner)
         {
-            this.container = containerConfig.container;
+            this.container = container;
             //this.prefab = bulletPrefab;
-            this.worldTransform = containerConfig.worldTransform;
+            this.worldTransform = worldTransform;
             this.levelBounds = levelBounds;
             this._bulletSpawner = bulletSpawner;
-            this.initialCount = containerConfig.initialCount;
+            this.initialCount = initialCount;
 
             for (var i = 0; i < this.initialCount; i++)
             {

@@ -490,11 +490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bdcdf257e0242258e7a67fe13d80e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPositions: {fileID: 7166351703523243261}
-  character: {fileID: 4414282821800802397}
-  worldTransform: {fileID: 1683128698}
-  container: {fileID: 178513672}
-  prefab: {fileID: 559606060570185700, guid: 87fe189881a524806800482ac8eaaa83, type: 3}
+  _enemyPositions: {fileID: 7166351703523243261}
+  _character: {fileID: 4414282821800802397}
+  _worldTransform: {fileID: 1683128698}
+  _container: {fileID: 178513672}
+  _prefab: {fileID: 559606060570185700, guid: 87fe189881a524806800482ac8eaaa83, type: 3}
 --- !u!1 &679278007
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +541,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPositions: {fileID: 7166351703523243261}
   _enemyPool: {fileID: 562298207}
+  _enemyContainerConfig: {fileID: 11400000, guid: 12dbc416ac741944da41651406392324,
+    type: 2}
 --- !u!1 &883274639
 GameObject:
   m_ObjectHideFlags: 0

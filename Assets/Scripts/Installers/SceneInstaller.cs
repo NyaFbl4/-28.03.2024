@@ -21,10 +21,11 @@ namespace ShootEmUp
 
         public override void InstallBindings()
         {
+            /*
             this.Container
                 .BindInterfacesAndSelfTo<BulletSystem>()
                 .AsSingle();
-
+            */
 
             this.Container
                 .Bind<GameManager>()

@@ -23,11 +23,13 @@ namespace ShootEmUp
                 .Bind<BulletConfig>()
                 .FromInstance(this._bulletCharacterConfig)
                 .AsCached();
-
+            
             this.Container
-                .Bind<ContainerConfig>()
-                .FromInstance(this._bulletsContainerConfig)
-                .AsCached();
+                .BindInterfacesAndSelfTo<BulletSystem>()
+                .AsSingle()
+                .WithArguments(_bulletsContainerConfig.container,
+                               _bulletsContainerConfig.worldTransform,
+                               _bulletsContainerConfig.initialCount);
 
             this.Container
                 .BindFactory<Bullet, BulletSpawner>()
