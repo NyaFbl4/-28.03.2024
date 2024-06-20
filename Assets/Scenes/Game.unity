@@ -277,6 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543820e45f3b976479d45d2b4e2cf480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _character: {fileID: 809540891661548873, guid: 9699e7e809fd44b2bbf3d30c951ecbd2,
+    type: 3}
+  _characterConfig: {fileID: 11400000, guid: 7b2f3695a77fa2047bfa64db7c48e6c8, type: 2}
 --- !u!4 &448317044
 Transform:
   m_ObjectHideFlags: 0
@@ -772,12 +775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 3951702117947426123}
-  _bulletConfig: {fileID: 11400000, guid: 7138ae5d32d814e0ca50c616c65ea105, type: 2}
-  _character: {fileID: 4414282821800802397}
-  _bulletPrefab: {fileID: 201757604187811891, guid: 5fe72886874b4e445b06cf777ca4920d,
-    type: 3}
-  _wolrdTransform: {fileID: 1683128698}
-  _levelBounds: {fileID: 2572952653776768186}
 --- !u!4 &1424502471
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,7 +1030,7 @@ MonoBehaviour:
   _bulletCharacterConfig: {fileID: 11400000, guid: 7138ae5d32d814e0ca50c616c65ea105,
     type: 2}
   _levelBounds: {fileID: 2572952653776768186}
-  _bulletsContainerConfig: {fileID: 11400000, guid: c9284737d5c58734090d0bc1296d5b27,
+  _bulletsContainerConfig: {fileID: 11400000, guid: 0944345e66ebcdc4693619994c0d4378,
     type: 2}
 --- !u!1 &61006797492197339
 GameObject:
@@ -1482,7 +1479,7 @@ PrefabInstance:
     - target: {fileID: 809540891661548873, guid: 9699e7e809fd44b2bbf3d30c951ecbd2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9699e7e809fd44b2bbf3d30c951ecbd2, type: 3}

@@ -973,6 +973,10 @@
             <e p="TeamComponent.cs" t="Include" />
             <e p="WeaponComponent.cs" t="Include" />
           </e>
+          <e p="Configs" t="Include">
+            <e p="ContainerConfig.cs" t="Include" />
+            <e p="UnitConfig.cs" t="Include" />
+          </e>
           <e p="Enemy" t="Include">
             <e p="Agents" t="Include">
               <e p="EnemyAttackAgent.cs" t="Include" />
@@ -994,7 +998,6 @@
           <e p="Installers" t="Include">
             <e p="BulletSystemInstaller.cs" t="Include" />
             <e p="CharacterInstaller.cs" t="Include" />
-            <e p="ContainerConfig.cs" t="Include" />
             <e p="EnemyInstaller.cs" t="Include" />
             <e p="EnemySystemInstaller.cs" t="Include" />
             <e p="SceneInstaller.cs" t="Include" />
