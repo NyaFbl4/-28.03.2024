@@ -32,8 +32,8 @@ namespace ShootEmUp
         {
             this._enemyPositions = enemyPositions;
             this._character = character;
-            this._worldTransform = worldTransform;
-            this._container = container;
+            //this._worldTransform = worldTransform;
+            //this._container = container;
         }
         
 
