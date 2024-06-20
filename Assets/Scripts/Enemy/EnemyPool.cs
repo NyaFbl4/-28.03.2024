@@ -24,14 +24,16 @@ namespace ShootEmUp
         [SerializeField]
         private GameObject prefab;
 
-        private readonly Queue<GameObject> enemyPool = new();
+        public readonly Queue<GameObject> enemyPool = new();
 
+            /*
         [Inject]
         public void Construct(EnemyPositions enemyPositions, GameObject character, 
             ContainerConfig enemyContainerConfig, GameObject prefab)
         {
             
         }
+        */
         
         private void Awake()
         {

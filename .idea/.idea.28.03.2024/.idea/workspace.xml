@@ -22,7 +22,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/CharacterInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Installers/SceneInstaller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletFactory.cs" />
@@ -30,11 +29,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/EnemyInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/EnemySpawnInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletsContainerConfig.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/EnemySystemInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPositions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ContainerConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/SceneInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BulletSystemInstaller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Installers/EnemySystemInstaller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2hSHfwEKTpk0w0kEuXloOBBgOop" />

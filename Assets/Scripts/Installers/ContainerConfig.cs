@@ -3,8 +3,8 @@
 namespace ShootEmUp
 {
     [CreateAssetMenu(
-        fileName = "Bullet Config",
-        menuName = "Bullets/New BulletsContainer"
+        fileName = "Container Config",
+        menuName = "Container/New ContainerConfig"
     )]
     public sealed class ContainerConfig : ScriptableObject
     {
