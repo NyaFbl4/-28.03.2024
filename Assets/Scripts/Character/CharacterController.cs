@@ -13,36 +13,33 @@ namespace ShootEmUp
         private readonly BulletSystem _bulletSystem;
         //[SerializeField] 
         private readonly BulletConfig _bulletConfig;
-        private readonly HitPointsComponent _hitPointsComponent;
-        private readonly WeaponComponent _weaponComponent;
+        //private readonly HitPointsComponent _hitPointsComponent;
+        //private readonly WeaponComponent _weaponComponent;
         
         public bool _fireRequired;
 
         //[Inject]
         public CharacterController(GameObject character, GameManager gameManager, 
-                              BulletSystem bulletSystem, BulletConfig bulletCharacterConfig,
-                              HitPointsComponent hitPointsComponent, WeaponComponent weaponComponent)
+                              BulletSystem bulletSystem, BulletConfig bulletCharacterConfig)
         {
             _character = character;
             _gameManager = gameManager;
             _bulletSystem = bulletSystem;
             _bulletConfig = bulletCharacterConfig;
-            _hitPointsComponent = hitPointsComponent;
-            _weaponComponent = weaponComponent;
-            
+
             Debug.Log("injected CharacterController");
         }
 
         private void OnEnable()
         {
-            _hitPointsComponent.hpEmpty += OnCharacterDeath;
-            //_character.GetComponent<HitPointsComponent>().hpEmpty += OnCharacterDeath;
+            //_hitPointsComponent.hpEmpty += OnCharacterDeath;
+            _character.GetComponent<HitPointsComponent>().hpEmpty += OnCharacterDeath;
         }
 
         private void OnDisable()
         {
-            _hitPointsComponent.hpEmpty -= OnCharacterDeath;
-            //_character.GetComponent<HitPointsComponent>().hpEmpty -= OnCharacterDeath;
+            //_hitPointsComponent.hpEmpty -= OnCharacterDeath;
+            _character.GetComponent<HitPointsComponent>().hpEmpty -= OnCharacterDeath;
         }
 
         public void OnCharacterDeath(GameObject _) => _gameManager.FinishGame();
@@ -58,7 +55,7 @@ namespace ShootEmUp
 
         private void OnFlyBullet()
         {
-            var weapon = _weaponComponent;
+            var weapon = _character.GetComponent<WeaponComponent>();
             _bulletSystem.FlyBulletByArgs(new BulletSystem.Args
             {
                 isPlayer = true,

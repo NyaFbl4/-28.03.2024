@@ -6,7 +6,7 @@ namespace ShootEmUp
     public class CharacterInstaller : MonoInstaller
     {
         [SerializeField] private GameObject _character;
-        [SerializeField] private UnitConfig _characterConfig;
+        //[SerializeField] private UnitConfig _characterConfig;
         //[SerializeField] private HitPointsComponent _hitPointsComponent;
         public override void InstallBindings()
         {
@@ -24,6 +24,7 @@ namespace ShootEmUp
                 .FromInstance(this._character)
                 .AsSingle();
             
+            /*           
             this.Container
                 .Bind<HitPointsComponent>()
                 .FromComponentInNewPrefab(this._character)
@@ -48,6 +49,7 @@ namespace ShootEmUp
                 .Bind<UnitConfig>()
                 .FromInstance(this._characterConfig)
                 .AsSingle();
+            */
         }
     }
 }

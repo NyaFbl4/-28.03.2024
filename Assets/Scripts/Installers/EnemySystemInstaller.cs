@@ -5,15 +5,13 @@ namespace ShootEmUp
 {
     public class EnemySystemInstaller : MonoInstaller
     {
-        [SerializeField] 
-        private ContainerConfig _enemyContainerConfig;
+        //[SerializeField] private ContainerConfig _enemyContainerConfig;
 
         [SerializeField] private EnemyPositions _enemyPositions;
         [SerializeField] private EnemyPool _enemyPool;
         //[SerializeField] private 
 
-        [SerializeField]
-        private GameObject _prefab;
+        //[SerializeField] private GameObject _prefab;
 
         public override void InstallBindings()
         {

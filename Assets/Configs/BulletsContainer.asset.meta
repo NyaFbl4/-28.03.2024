@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Configs/Enemy Container.asset.meta
-guid: b6fa83c26a7574342b187453b8b8961e
-========
-guid: 0944345e66ebcdc4693619994c0d4378
->>>>>>>> origin/main:Assets/Configs/BulletsContainer.asset.meta
+guid: 98c691b041debc54d9e2428cbf9d3281
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

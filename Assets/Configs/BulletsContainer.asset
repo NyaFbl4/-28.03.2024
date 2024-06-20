@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e12fd2c8655958b438d8383f29c493a4, type: 3}
-<<<<<<< HEAD:Assets/Configs/Bullet Config.asset
-  m_Name: Bullet Config
-=======
   m_Name: BulletsContainer
->>>>>>> origin/main:Assets/Configs/BulletsContainer.asset
   m_EditorClassIdentifier: 
-  initialCount: 0
+  initialCount: 50
   container: {fileID: 0}
   worldTransform: {fileID: 0}

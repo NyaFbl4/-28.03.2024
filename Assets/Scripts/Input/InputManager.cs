@@ -12,15 +12,14 @@ namespace ShootEmUp
 
         //[SerializeField]
         private readonly CharacterController _characterController;
-        private readonly MoveComponent _moveComponent;
+       // private readonly MoveComponent _moveComponent;
 
         //[Inject]
-        public  InputManager(CharacterController characterController, 
-            GameObject character, MoveComponent moveComponent)
+        public  InputManager(CharacterController characterController, GameObject character)
         {
             this._characterController = characterController;
             this._character = character;
-            _moveComponent = moveComponent;
+            //_moveComponent = moveComponent;
             Debug.Log("injected InputManager");
         }
 
@@ -47,10 +46,7 @@ namespace ShootEmUp
         
         public void FixedTick()
         {
-            //this._character.GetComponent<MoveComponent>().MoveByRigidbodyVelocity(new Vector2(this.HorizontalDirection, 0) * Time.fixedDeltaTime);
-            _moveComponent.MoveByRigidbodyVelocity(new Vector2
-                (this.HorizontalDirection, 0) * Time.fixedDeltaTime);
-            
+            this._character.GetComponent<MoveComponent>().MoveByRigidbodyVelocity(new Vector2(this.HorizontalDirection, 0) * Time.fixedDeltaTime);
         }
     }
 }
