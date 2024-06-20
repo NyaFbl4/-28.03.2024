@@ -8,10 +8,10 @@ namespace ShootEmUp
     public sealed class EnemyPool : MonoBehaviour
     {
         //[Header("Spawn")]
-        [SerializeField]
+        //[SerializeField]
         private EnemyPositions _enemyPositions;
 
-        [SerializeField]
+        //[SerializeField]
         private GameObject _character;
 
         [SerializeField]
@@ -24,14 +24,19 @@ namespace ShootEmUp
         [SerializeField]
         private GameObject _prefab;
 
+        private int initialCount = 5;
+        private EnemySpawner _enemySpawner;
+
         public readonly Queue<GameObject> enemyPool = new();
         
         [Inject]
         public void Construct(EnemyPositions enemyPositions, GameObject character,
-            Transform worldTransform, Transform container)
+                EnemySpawner enemySpawner)
+            //Transform worldTransform, Transform container)
         {
             this._enemyPositions = enemyPositions;
             this._character = character;
+            this._enemySpawner = enemySpawner;
             //this._worldTransform = worldTransform;
             //this._container = container;
         }
@@ -39,9 +44,10 @@ namespace ShootEmUp
 
         private void Awake()
         {
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < initialCount; i++)
             {
-                var enemy = Instantiate(this._prefab, this._container);
+                //var enemy = Instantiate(this._prefab, this._container);
+                var enemy = _enemySpawner.EnemySpawn(_prefab, _container);
                 this.enemyPool.Enqueue(enemy);
             }
         }
