@@ -5,8 +5,11 @@ namespace ShootEmUp
 {
     public class SceneInstaller : MonoInstaller
     {
-        [SerializeField] private GameObject _character;
-        [SerializeField] private LevelBounds _levelBounds;
+        [SerializeField] private LevelBoundsConfig _levelBoundsConfig;
+
+        [SerializeField] private LevelBackgroundParametrsConfig _levelBackgroundParametrsConfig;
+        //[SerializeField] private GameObject _character;
+        
 
         //[SerializeField] private CharacterController _characterController;
 
@@ -21,12 +24,6 @@ namespace ShootEmUp
 
         public override void InstallBindings()
         {
-            /*
-            this.Container
-                .BindInterfacesAndSelfTo<BulletSystem>()
-                .AsSingle();
-            */
-
             this.Container
                 .Bind<GameManager>()
                 .FromComponentInHierarchy()
@@ -34,8 +31,17 @@ namespace ShootEmUp
             
             this.Container
                 .Bind<LevelBounds>()
-                .FromInstance(this._levelBounds)
-                .AsTransient();
+                .AsSingle()
+                .WithArguments(_levelBoundsConfig.leftBorder,
+                                _levelBoundsConfig.rightBorder,
+                                _levelBoundsConfig.downBorder,
+                                _levelBoundsConfig.topBorder);
+
+            this.Container
+                .BindInterfacesAndSelfTo<LevelBackground>()
+                .AsSingle()
+                .WithArguments(_levelBackgroundParametrsConfig.parametrs,
+                               _levelBackgroundParametrsConfig.transform);
 
         }
     }

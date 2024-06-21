@@ -11,16 +11,18 @@ namespace ShootEmUp
         [SerializeField] private EnemyPool _enemyPool;
         [SerializeField] private ContainerConfig _enemyContainerConfig;
         [SerializeField] private EnemySpawner _enemySpawner;
+        [SerializeField] private PositionsConfig _positionsConfig;
 
         //[SerializeField] private GameObject _prefab;
 
         public override void InstallBindings()
         {
+            /*
             this.Container
                 .Bind<EnemyPositions>()
                 .FromInstance(this._enemyPositions)
                 .AsSingle();
-
+            */
             this.Container
                 .Bind<EnemyPool>()
                 .FromInstance(this._enemyPool)
@@ -36,6 +38,13 @@ namespace ShootEmUp
                 .Bind<EnemySpawner>()
                 .FromInstance(this._enemySpawner)
                 .AsCached();
+            
+            this.Container
+                //.BindInterfacesAndSelfTo<EnemyPositions>()
+                .Bind<EnemyPositions>()
+                .AsSingle()
+                .WithArguments(_positionsConfig.spawnPositions,
+                               _positionsConfig.attackPositions);
             
         }
     }
