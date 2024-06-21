@@ -10,5 +10,6 @@ namespace ShootEmUp
             var enemy = Instantiate(prefab, container);
             return enemy;
         }
+
     }
 }

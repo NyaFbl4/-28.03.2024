@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12fd2c8655958b438d8383f29c493a4, type: 3}
   m_Name: BulletsContainer
   m_EditorClassIdentifier: 
+  prefab: {fileID: 2743036428890533592, guid: 5fe72886874b4e445b06cf777ca4920d, type: 3}
   initialCount: 50
   container: {fileID: 0}
   worldTransform: {fileID: 0}

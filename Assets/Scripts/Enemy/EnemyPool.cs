@@ -5,7 +5,7 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class EnemyPool : MonoBehaviour
+    public sealed class EnemyPool : IInitializable
     {
         //[Header("Spawn")]
         //[SerializeField]
@@ -14,14 +14,14 @@ namespace ShootEmUp
         //[SerializeField]
         private GameObject _character;
 
-        [SerializeField]
+        //[SerializeField]
         private Transform _worldTransform;
 
         //[Header("Pool")]
-        [SerializeField]
+        //[SerializeField]
         private Transform _container;
 
-        [SerializeField]
+        //[SerializeField]
         private GameObject _prefab;
 
         private int initialCount = 5;
@@ -29,20 +29,21 @@ namespace ShootEmUp
 
         public readonly Queue<GameObject> enemyPool = new();
         
-        [Inject]
-        public void Construct(EnemyPositions enemyPositions, GameObject character,
-                EnemySpawner enemySpawner)
-            //Transform worldTransform, Transform container)
+        //[Inject]
+        public EnemyPool(EnemyPositions enemyPositions, GameObject character,
+                EnemySpawner enemySpawner, int init, GameObject prefab,
+            Transform worldTransform, Transform container)
         {
             this._enemyPositions = enemyPositions;
             this._character = character;
             this._enemySpawner = enemySpawner;
-            //this._worldTransform = worldTransform;
-            //this._container = container;
+            this._worldTransform = worldTransform;
+            this._container = container;
+            this._prefab = prefab;
+            this.initialCount = init;
         }
-        
 
-        private void Awake()
+        public void Initialize()
         {
             for (var i = 0; i < initialCount; i++)
             {
@@ -54,19 +55,21 @@ namespace ShootEmUp
 
         public GameObject SpawnEnemy()
         {
-            if (!this.enemyPool.TryDequeue(out var enemy))
+            if (!enemyPool.TryDequeue(out var enemy))
             {
+                Debug.Log("false");
                 return null;
             }
-
+            
+            Debug.Log("true");
+            
             enemy.transform.SetParent(this._worldTransform);
 
             var spawnPosition = this._enemyPositions.RandomSpawnPosition();
             enemy.transform.position = spawnPosition.position;
-            
             var attackPosition = this._enemyPositions.RandomAttackPosition();
+            
             enemy.GetComponent<EnemyMoveAgent>().SetDestination(attackPosition.position);
-
             enemy.GetComponent<EnemyAttackAgent>().SetTarget(this._character);
             return enemy;
         }

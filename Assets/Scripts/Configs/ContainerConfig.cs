@@ -8,6 +8,7 @@ namespace ShootEmUp
     )]
     public sealed class ContainerConfig : ScriptableObject
     {
+        public GameObject prefab;
         public int initialCount;
         public Transform container;
         public Transform worldTransform;

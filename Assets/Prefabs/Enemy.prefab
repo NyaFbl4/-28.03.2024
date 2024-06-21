@@ -192,7 +192,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 559606060570185700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bdb5771141e4cf18c434a69ec116e09, type: 3}
+  m_Script: {fileID: 11500000, guid: 36993a58201e9f94c800422adbbda56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveComponent: {fileID: 5568771391735819372}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 559606060570185700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba7965842e74a9f89ba3aa66d61da46, type: 3}
+  m_Script: {fileID: 11500000, guid: 208006c1b993cfe4da8b67fe33b7bdd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponComponent: {fileID: 5568771391735819374}

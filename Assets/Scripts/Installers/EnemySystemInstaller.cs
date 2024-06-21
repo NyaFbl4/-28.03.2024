@@ -24,20 +24,23 @@ namespace ShootEmUp
                 .AsSingle();
             */
             this.Container
-                .Bind<EnemyPool>()
-                .FromInstance(this._enemyPool)
+                .BindInterfacesAndSelfTo<EnemyPool>()
+                //.FromInstance(this._enemyPool)
                 .AsSingle()
                 .WithArguments(_enemyContainerConfig.container,
-                               _enemyContainerConfig.worldTransform);
+                               _enemyContainerConfig.worldTransform,
+                               _enemyContainerConfig.initialCount,
+                               _enemyContainerConfig.prefab);
 
             this.Container
                 .BindInterfacesAndSelfTo<EnemyManager>()
                 .AsSingle();
-
+            
             this.Container
                 .Bind<EnemySpawner>()
                 .FromInstance(this._enemySpawner)
                 .AsCached();
+
             
             this.Container
                 //.BindInterfacesAndSelfTo<EnemyPositions>()

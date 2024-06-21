@@ -1,8 +1,9 @@
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class EnemyMoveAgent : MonoBehaviour
+    public sealed class EnemyMoveAgent : MonoBehaviour, IFixedTickable
     {
         public bool IsReached
         {
@@ -21,7 +22,7 @@ namespace ShootEmUp
             this.isReached = false;
         }
 
-        private void FixedUpdate()
+        public void FixedTick()
         {
             if (this.isReached)
             {
