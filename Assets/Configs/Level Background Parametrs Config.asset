@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level Background Parametrs Config
   m_EditorClassIdentifier: 
   parametrs:
-    m_startPositionY: 0
-    m_endPositionY: 0
-    m_movingSpeedY: 0
+    m_startPositionY: 19
+    m_endPositionY: -38
+    m_movingSpeedY: 5
+  transform: {fileID: 0}
