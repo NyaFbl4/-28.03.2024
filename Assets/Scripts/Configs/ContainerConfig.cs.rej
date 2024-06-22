@@ -1,0 +1,9 @@
+diff a/Assets/Scripts/Configs/ContainerConfig.cs b/Assets/Scripts/Configs/ContainerConfig.cs	(rejected hunks)
+@@ -8,6 +8,7 @@
+     )]
+     public sealed class ContainerConfig : ScriptableObject
+     {
++        public GameObject prefab;
+         public int initialCount;
+         public Transform container;
+         public Transform worldTransform;

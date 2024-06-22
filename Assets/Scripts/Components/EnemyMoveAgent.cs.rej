@@ -1,0 +1,12 @@
+diff a/Assets/Scripts/Components/EnemyMoveAgent.cs b/Assets/Scripts/Components/EnemyMoveAgent.cs	(rejected hunks)
+@@ -1,8 +1,9 @@
+ using UnityEngine;
++using Zenject;
+ 
+ namespace ShootEmUp
+ {
+-    public sealed class EnemyMoveAgent : MonoBehaviour
++    public sealed class EnemyMoveAgent : MonoBehaviour, IFixedTickable
+     {
+         public bool IsReached
+         {

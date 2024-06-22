@@ -5,23 +5,16 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class EnemyPool : IInitializable
+    public sealed class EnemyPool : MonoBehaviour, IInitializable
     {
-        //[Header("Spawn")]
-        //[SerializeField]
         private EnemyPositions _enemyPositions;
-
-        //[SerializeField]
         private GameObject _character;
 
-        //[SerializeField]
+        [SerializeField]
         private Transform _worldTransform;
-
-        //[Header("Pool")]
-        //[SerializeField]
+        [SerializeField]
         private Transform _container;
-
-        //[SerializeField]
+        [SerializeField]
         private GameObject _prefab;
 
         private int initialCount = 5;
@@ -29,7 +22,16 @@ namespace ShootEmUp
 
         public readonly Queue<GameObject> enemyPool = new();
         
-        //[Inject]
+        [Inject]
+        public void Construct(EnemyPositions enemyPositions, GameObject character,
+            EnemySpawner enemySpawner)
+        {
+            this._enemyPositions = enemyPositions;
+            this._character = character;
+            this._enemySpawner = enemySpawner;
+        }
+        
+        /*
         public EnemyPool(EnemyPositions enemyPositions, GameObject character,
                 EnemySpawner enemySpawner, int init, GameObject prefab,
             Transform worldTransform, Transform container)
@@ -42,7 +44,7 @@ namespace ShootEmUp
             this._prefab = prefab;
             this.initialCount = init;
         }
-
+        */
         public void Initialize()
         {
             for (var i = 0; i < initialCount; i++)

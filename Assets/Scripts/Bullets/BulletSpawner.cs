@@ -2,14 +2,8 @@
 
 namespace ShootEmUp
 {
-    public class BulletSpawner : PlaceholderFactory<Bullet>
+    public sealed class BulletSpawner : PlaceholderFactory<Bullet>
     {
-        /*
-        public Bullet SpawnBullet(Bullet prefab, Transform transform)
-        {
-            var bullet = Instantiate(prefab, transform);
-            return bullet;
-        }
-        */
+
     }
 }
