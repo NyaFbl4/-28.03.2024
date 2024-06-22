@@ -6,7 +6,7 @@ namespace ShootEmUp
         fileName = "Positions Config",
         menuName = "Config/New PositionsConfig"
     )]
-    public class PositionsConfig : ScriptableObject
+    public sealed class PositionsConfig : ScriptableObject
     {
         public Transform[] spawnPositions;
         public Transform[] attackPositions;

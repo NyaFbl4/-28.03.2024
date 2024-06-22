@@ -5,20 +5,13 @@ namespace ShootEmUp
 {
     public sealed class CharacterController : IFixedTickable
     {
-        //[SerializeField] 
-        private readonly GameObject _character; 
-        //[SerializeField] 
+        private readonly GameObject _character;
         private readonly GameManager _gameManager;
-        //[SerializeField] 
         private readonly BulletSystem _bulletSystem;
-        //[SerializeField] 
         private readonly BulletConfig _bulletConfig;
-        //private readonly HitPointsComponent _hitPointsComponent;
-        //private readonly WeaponComponent _weaponComponent;
-        
+
         public bool _fireRequired;
 
-        //[Inject]
         public CharacterController(GameObject character, GameManager gameManager, 
                               BulletSystem bulletSystem, BulletConfig bulletCharacterConfig)
         {
@@ -32,13 +25,11 @@ namespace ShootEmUp
 
         private void OnEnable()
         {
-            //_hitPointsComponent.hpEmpty += OnCharacterDeath;
             _character.GetComponent<HitPointsComponent>().hpEmpty += OnCharacterDeath;
         }
 
         private void OnDisable()
         {
-            //_hitPointsComponent.hpEmpty -= OnCharacterDeath;
             _character.GetComponent<HitPointsComponent>().hpEmpty -= OnCharacterDeath;
         }
 

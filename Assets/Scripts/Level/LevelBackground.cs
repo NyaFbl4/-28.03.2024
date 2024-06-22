@@ -20,7 +20,6 @@ namespace ShootEmUp
 
         private GameObject _tr;
 
-        //[SerializeField]
         private Params _params;
 
         public LevelBackground(GameObject transform, Params parametrs)

@@ -6,7 +6,7 @@ namespace ShootEmUp
         fileName = "Level Bounds Config",
         menuName = "Config/New LevelBoundsConfig"
     )]
-    public class LevelBoundsConfig :  ScriptableObject
+    public sealed class LevelBoundsConfig :  ScriptableObject
     {
         public Transform leftBorder;
         public Transform rightBorder;

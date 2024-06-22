@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -7,16 +6,12 @@ namespace ShootEmUp
 {
     public sealed class EnemyManager :  ITickable
     {
-        //[SerializeField]
         private EnemyPool _enemyPool;
-
-        //[SerializeField]
         private BulletSystem _bulletSystem;
         
         private readonly HashSet<GameObject> m_activeEnemies = new();
         private float _timer = 0;
-
-        //[Inject]
+        
         public EnemyManager(EnemyPool enemyPool, BulletSystem bulletSystem)
         {
             this._enemyPool = enemyPool;
@@ -40,31 +35,12 @@ namespace ShootEmUp
                             enemy.GetComponent<EnemyAttackAgent>().OnFire += this.OnFire;
                         }    
                     }
-                    
-                    //Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+
                     _timer = 0;
                 }
             }
         }
 
-        /*
-        private IEnumerator Startt()
-        {
-            while (true)
-            {
-                yield return new WaitForSeconds(1);
-                var enemy = this._enemyPool.SpawnEnemy();
-                if (enemy != null)
-                {
-                    if (this.m_activeEnemies.Add(enemy))
-                    {
-                        enemy.GetComponent<HitPointsComponent>().hpEmpty += this.OnDestroyed;
-                        enemy.GetComponent<EnemyAttackAgent>().OnFire += this.OnFire;
-                    }    
-                }
-            }
-        }
-        */
 
         private void OnDestroyed(GameObject enemy)
         {

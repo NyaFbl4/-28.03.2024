@@ -3,12 +3,9 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class EnemyPositions //: IEnemyPositions
+    public sealed class EnemyPositions 
     {
-        //[SerializeField]
         private Transform[] _spawnPositions;
-
-        //[SerializeField]
         private Transform[] _attackPositions;
 
         [Inject]

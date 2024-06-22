@@ -5,7 +5,6 @@ namespace ShootEmUp
 {
     public class EnemySystemInstaller : MonoInstaller
     {
-        [SerializeField] private EnemyPositions _enemyPositions;
         [SerializeField] private EnemyPool _enemyPool;
         [SerializeField] private ContainerConfig _enemyContainerConfig;
         [SerializeField] private EnemySpawner _enemySpawner;
@@ -18,7 +17,7 @@ namespace ShootEmUp
                 .FromInstance(this._enemyPool)
                 .AsSingle();
 
-            //
+            //ТАк регистрирую если убираю MonoBehaviour
             /*
             this.Container
                 .BindInterfacesAndSelfTo<EnemyPool>()

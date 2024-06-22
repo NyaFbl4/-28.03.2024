@@ -6,20 +6,13 @@ namespace ShootEmUp
     public sealed class InputManager : ITickable, IFixedTickable
     {
         public float HorizontalDirection { get; private set; }
-
-        //[SerializeField]
         private readonly GameObject _character;
-
-        //[SerializeField]
         private readonly CharacterController _characterController;
-       // private readonly MoveComponent _moveComponent;
 
-        //[Inject]
         public  InputManager(CharacterController characterController, GameObject character)
         {
             this._characterController = characterController;
             this._character = character;
-            //_moveComponent = moveComponent;
             Debug.Log("injected InputManager");
         }
 

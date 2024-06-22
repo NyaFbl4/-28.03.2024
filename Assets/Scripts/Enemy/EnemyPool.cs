@@ -31,6 +31,7 @@ namespace ShootEmUp
             this._enemySpawner = enemySpawner;
         }
         
+        //Создаю конструктор, если нет MonoBehaviour
         /*
         public EnemyPool(EnemyPositions enemyPositions, GameObject character,
                 EnemySpawner enemySpawner, int init, GameObject prefab,
@@ -49,7 +50,6 @@ namespace ShootEmUp
         {
             for (var i = 0; i < initialCount; i++)
             {
-                //var enemy = Instantiate(this._prefab, this._container);
                 var enemy = _enemySpawner.EnemySpawn(_prefab, _container);
                 this.enemyPool.Enqueue(enemy);
             }
