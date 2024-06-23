@@ -9,16 +9,18 @@ namespace ShootEmUp
         [SerializeField] private ContainerConfig _enemyContainerConfig;
         [SerializeField] private EnemySpawner _enemySpawner;
         [SerializeField] private PositionsConfig _positionsConfig;
+        [SerializeField] private GameObject _prefabEnemy;
 
         public override void InstallBindings()
         {
+            /*
             this.Container
                 .BindInterfacesAndSelfTo<EnemyPool>()
                 .FromInstance(this._enemyPool)
                 .AsSingle();
-
+            */
             //ТАк регистрирую если убираю MonoBehaviour
-            /*
+            
             this.Container
                 .BindInterfacesAndSelfTo<EnemyPool>()
                 .AsSingle()
@@ -26,7 +28,7 @@ namespace ShootEmUp
                                _enemyContainerConfig.worldTransform,
                                _enemyContainerConfig.initialCount,
                                _enemyContainerConfig.prefab);
-             */
+             
 
             this.Container
                 .BindInterfacesAndSelfTo<EnemyManager>()

@@ -5,7 +5,7 @@ using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class EnemyPool : MonoBehaviour, IInitializable
+    public sealed class EnemyPool : IInitializable
     {
         private EnemyPositions _enemyPositions;
         private GameObject _character;
@@ -21,7 +21,7 @@ namespace ShootEmUp
         private EnemySpawner _enemySpawner;
 
         public readonly Queue<GameObject> enemyPool = new();
-        
+        /*
         [Inject]
         public void Construct(EnemyPositions enemyPositions, GameObject character,
             EnemySpawner enemySpawner)
@@ -30,22 +30,22 @@ namespace ShootEmUp
             this._character = character;
             this._enemySpawner = enemySpawner;
         }
-        
+        */
         //Создаю конструктор, если нет MonoBehaviour
-        /*
+        
         public EnemyPool(EnemyPositions enemyPositions, GameObject character,
                 EnemySpawner enemySpawner, int init, GameObject prefab,
             Transform worldTransform, Transform container)
         {
             this._enemyPositions = enemyPositions;
-            this._character = character;
-            this._enemySpawner = enemySpawner;
-            this._worldTransform = worldTransform;
-            this._container = container;
             this._prefab = prefab;
+            this._enemySpawner = enemySpawner;
+            this._container = container;
+            this._worldTransform = worldTransform;
+            this._character = character;
             this.initialCount = init;
         }
-        */
+        
         public void Initialize()
         {
             for (var i = 0; i < initialCount; i++)
