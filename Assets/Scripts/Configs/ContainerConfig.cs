@@ -10,7 +10,7 @@ namespace ShootEmUp
     {
         public GameObject prefab;
         public int initialCount;
-        public Transform container;
-        public Transform worldTransform;
+        //public Transform container;
+        //public Transform worldTransform;
     }
 }

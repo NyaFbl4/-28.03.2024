@@ -9,40 +9,28 @@ namespace ShootEmUp
     {
         private EnemyPositions _enemyPositions;
         private GameObject _character;
-
-        [SerializeField]
+        
         private Transform _worldTransform;
-        [SerializeField]
+
         private Transform _container;
-        [SerializeField]
+
         private GameObject _prefab;
 
         private int initialCount = 5;
         private EnemySpawner _enemySpawner;
 
         public readonly Queue<GameObject> enemyPool = new();
-        /*
-        [Inject]
-        public void Construct(EnemyPositions enemyPositions, GameObject character,
-            EnemySpawner enemySpawner)
+
+        public EnemyPool(EnemyPositions enemyPositions, GameObject prefab,
+                EnemySpawner enemySpawner, int init, GameObject character,
+            Transform container, Transform worldTransform)
         {
             this._enemyPositions = enemyPositions;
             this._character = character;
-            this._enemySpawner = enemySpawner;
-        }
-        */
-        //Создаю конструктор, если нет MonoBehaviour
-        
-        public EnemyPool(EnemyPositions enemyPositions, GameObject character,
-                EnemySpawner enemySpawner, int init, GameObject prefab,
-            Transform worldTransform, Transform container)
-        {
-            this._enemyPositions = enemyPositions;
-            this._prefab = prefab;
             this._enemySpawner = enemySpawner;
             this._container = container;
             this._worldTransform = worldTransform;
-            this._character = character;
+            this._prefab = prefab;
             this.initialCount = init;
         }
         

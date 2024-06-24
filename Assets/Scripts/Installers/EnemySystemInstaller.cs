@@ -8,27 +8,18 @@ namespace ShootEmUp
         [SerializeField] private EnemyPool _enemyPool;
         [SerializeField] private ContainerConfig _enemyContainerConfig;
         [SerializeField] private EnemySpawner _enemySpawner;
-        [SerializeField] private PositionsConfig _positionsConfig;
         [SerializeField] private GameObject _prefabEnemy;
+        [SerializeField] private EnemyTransformContainer _enemyTransformContainer;
 
         public override void InstallBindings()
         {
-            /*
-            this.Container
-                .BindInterfacesAndSelfTo<EnemyPool>()
-                .FromInstance(this._enemyPool)
-                .AsSingle();
-            */
-            //ТАк регистрирую если убираю MonoBehaviour
-            
             this.Container
                 .BindInterfacesAndSelfTo<EnemyPool>()
                 .AsSingle()
-                .WithArguments(_enemyContainerConfig.container,
-                               _enemyContainerConfig.worldTransform,
+                .WithArguments(_enemyTransformContainer.container,
+                               _enemyTransformContainer.worldTransform,
                                _enemyContainerConfig.initialCount,
                                _enemyContainerConfig.prefab);
-             
 
             this.Container
                 .BindInterfacesAndSelfTo<EnemyManager>()
@@ -39,13 +30,17 @@ namespace ShootEmUp
                 .FromInstance(this._enemySpawner)
                 .AsCached();
 
-            
             this.Container
                 .Bind<EnemyPositions>()
                 .AsSingle()
-                .WithArguments(_positionsConfig.spawnPositions,
-                               _positionsConfig.attackPositions);
-            
+                .WithArguments(_enemyTransformContainer.spawn, 
+                               _enemyTransformContainer.attack);
+
+            this.Container
+                .Bind<EnemyTransformContainer>()
+                .FromInstance(_enemyTransformContainer)
+                .AsSingle();
+
         }
     }
 }

@@ -9,6 +9,5 @@ namespace ShootEmUp
     public sealed class LevelBackgroundParametrsConfig : ScriptableObject
     {
         public Params parametrs;
-        public GameObject transform;
     }
 }

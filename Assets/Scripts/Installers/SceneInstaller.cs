@@ -5,10 +5,8 @@ namespace ShootEmUp
 {
     public class SceneInstaller : MonoInstaller
     {
-        [SerializeField] private LevelBoundsConfig _levelBoundsConfig;
-
         [SerializeField] private LevelBackgroundParametrsConfig _levelBackgroundParametrsConfig;
-
+        [SerializeField] private LevelContainer _levelContainer;
         public override void InstallBindings()
         {
             this.Container
@@ -18,16 +16,21 @@ namespace ShootEmUp
             this.Container
                 .Bind<LevelBounds>()
                 .AsSingle()
-                .WithArguments(_levelBoundsConfig.leftBorder,
-                                _levelBoundsConfig.rightBorder,
-                                _levelBoundsConfig.downBorder,
-                                _levelBoundsConfig.topBorder);
+                .WithArguments(_levelContainer.leftBorder,
+                               _levelContainer.rightBorder,
+                               _levelContainer.downBorder,
+                               _levelContainer.topBorder);
 
             this.Container
                 .BindInterfacesAndSelfTo<LevelBackground>()
                 .AsSingle()
                 .WithArguments(_levelBackgroundParametrsConfig.parametrs,
-                               _levelBackgroundParametrsConfig.transform);
+                               _levelContainer.background);
+
+            this.Container
+                .Bind<LevelContainer>()
+                .FromInstance(_levelContainer)
+                .AsSingle();
 
         }
     }
