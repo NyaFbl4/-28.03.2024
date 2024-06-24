@@ -8,7 +8,6 @@ namespace ShootEmUp
         [SerializeField] private EnemyPool _enemyPool;
         [SerializeField] private ContainerConfig _enemyContainerConfig;
         [SerializeField] private EnemySpawner _enemySpawner;
-        [SerializeField] private GameObject _prefabEnemy;
         [SerializeField] private EnemyTransformContainer _enemyTransformContainer;
 
         public override void InstallBindings()
