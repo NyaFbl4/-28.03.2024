@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using Zenject;
 
 namespace ShootEmUp
 {
-    public sealed class CharacterController : IFixedTickable
+    public sealed class CharacterController : IFixedTickable , IInitializable, IDisposable
     {
         private readonly GameObject _character;
         private readonly GameManager _gameManager;
@@ -19,16 +20,14 @@ namespace ShootEmUp
             _gameManager = gameManager;
             _bulletSystem = bulletSystem;
             _bulletConfig = bulletCharacterConfig;
-
-            Debug.Log("injected CharacterController");
         }
 
-        private void OnEnable()
+        public void Initialize()
         {
             _character.GetComponent<HitPointsComponent>().hpEmpty += OnCharacterDeath;
         }
 
-        private void OnDisable()
+        public void Dispose()
         {
             _character.GetComponent<HitPointsComponent>().hpEmpty -= OnCharacterDeath;
         }

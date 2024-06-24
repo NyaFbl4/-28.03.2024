@@ -25,11 +25,12 @@ namespace ShootEmUp
                 .BindInterfacesAndSelfTo<EnemyManager>()
                 .AsSingle();
             
+                
             this.Container
                 .Bind<EnemySpawner>()
                 .FromInstance(this._enemySpawner)
                 .AsCached();
-
+                
             this.Container
                 .Bind<EnemyPositions>()
                 .AsSingle()
@@ -40,7 +41,14 @@ namespace ShootEmUp
                 .Bind<EnemyTransformContainer>()
                 .FromInstance(_enemyTransformContainer)
                 .AsSingle();
-
+            
+            /*
+            this.Container
+                .BindFactory<GameObject, EnemySpawner>()
+                .FromComponentInNewPrefab(_prefabEnemy)
+                .WithGameObjectName("ENEMY")
+                .UnderTransform(_enemyTransformContainer.container);
+                */
         }
     }
 }

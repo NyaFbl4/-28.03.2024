@@ -8,7 +8,6 @@ namespace ShootEmUp
         private Transform[] _spawnPositions;
         private Transform[] _attackPositions;
 
-        [Inject]
         public EnemyPositions(Transform[] spawnPositions, Transform[] attackPositions)
         {
             _spawnPositions = spawnPositions;

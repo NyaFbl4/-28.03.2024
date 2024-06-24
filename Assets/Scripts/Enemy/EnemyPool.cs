@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using Zenject;
 
@@ -39,6 +38,7 @@ namespace ShootEmUp
             for (var i = 0; i < initialCount; i++)
             {
                 var enemy = _enemySpawner.EnemySpawn(_prefab, _container);
+                //var enemy = _enemySpawner.Create();
                 this.enemyPool.Enqueue(enemy);
             }
         }
@@ -47,12 +47,9 @@ namespace ShootEmUp
         {
             if (!enemyPool.TryDequeue(out var enemy))
             {
-                Debug.Log("false");
                 return null;
             }
-            
-            Debug.Log("true");
-            
+
             enemy.transform.SetParent(this._worldTransform);
 
             var spawnPosition = this._enemyPositions.RandomSpawnPosition();

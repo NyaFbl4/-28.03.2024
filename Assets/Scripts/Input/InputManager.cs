@@ -13,7 +13,6 @@ namespace ShootEmUp
         {
             this._characterController = characterController;
             this._character = character;
-            Debug.Log("injected InputManager");
         }
 
         public void Tick()
